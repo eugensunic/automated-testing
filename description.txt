@@ -5,7 +5,7 @@
 5.) get all svg's 
 6.) get all ID names displayed in a table
 7.) check external links (absolute path)
-8.) check interal links (relative path)
+8.) check internal links (relative path)
 9.) check if existing links are valid
 10.) check styles tag in html DOM, get amount of styles props being used
 11.) check dead links
@@ -15,7 +15,9 @@
 15.) check multiple eventListeners being attached 
 16.) check for memory leaks (undisposed objects, eventListeners)
 17.) check lazy loading on window.scroll
-18.) check if website uses jquery
+18.) check if website uses JQuery
 19.) check for css !important keyword and find amount of being used
 20.) check naming convention used for css classes and id's and see if they match
 the ones being used on the page
+21.) check number of allowed inputs in input fields and type of inputs, implement
+input fields exhaustion
