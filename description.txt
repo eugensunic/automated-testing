@@ -14,3 +14,8 @@
 14.) check multiple requests being sent instead of one (happens with observables)
 15.) check multiple eventListeners being attached 
 16.) check for memory leaks (undisposed objects, eventListeners)
+17.) check lazy loading on window.scroll
+18.) check if website uses jquery
+19.) check for css !important keyword and find amount of being used
+20.) check naming convention used for css classes and id's and see if they match
+the ones being used on the page
