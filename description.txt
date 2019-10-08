@@ -1,0 +1,16 @@
+1.) check if undefined/null/NaN is displayed in the browser
+2.) get number of images on web page, check if they contain alt attribute
+3.) get non existing href's of a tags, get amount of links on page
+4.) check if duplicate id's exist
+5.) get all svg's 
+6.) get all ID names displayed in a table
+7.) check external links (absolute path)
+8.) check interal links (relative path)
+9.) check if existing links are valid
+10.) check styles tag in html DOM, get amount of styles props being used
+11.) check dead links
+12.) check deprecated html tags
+13.) check deprecated js functions/syntax
+14.) check multiple requests being sent instead of one (happens with observables)
+15.) check multiple eventListeners being attached 
+16.) check for memory leaks (undisposed objects, eventListeners)
