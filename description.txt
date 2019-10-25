@@ -2,7 +2,7 @@
 2.) get number of images on web page, check if they contain alt attribute if path is valid
 3.) get non existing href's of a tags, get amount of links on page
 4.) check if duplicate id's exist
-5.) get all svg's 
+5.) get all SVG's 
 6.) get all ID names displayed in a table
 7.) check external links (absolute path)
 8.) check internal links (relative path)
@@ -22,3 +22,4 @@ the ones being used on the page
 21.) check number of allowed inputs in input fields and type of inputs, implement
 input fields exhaustion
 22.) get meta data, title, scripts loading
+23.) check which frameworks are used on the website
