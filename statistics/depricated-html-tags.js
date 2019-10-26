@@ -18,7 +18,9 @@ function containsDeprecatedHtmlTags() {
   return Object.values(obj).some(x => x.length);
 }
 
-function containsDeprecatedHtmlAttributes() {
+function getDeprecatedHtmlTags() {}
+
+function countDeprecatedHtmlAttributes() {
   const htmlBodyElements = document.body.getElementsByTagName("*");
   const forbiddenTags = [
     "align",
@@ -39,14 +41,23 @@ function containsDeprecatedHtmlAttributes() {
     "vspace",
     "width"
   ];
-  return Array.from(htmlBodyElements).map(x => {
-    const elementTags = Object.values(x.attributes).map(x => x.localName);
-    console.log("element Tags are", elementTags);
-    return forbiddenTags.some(tag => {
-      // console.log("tag is", tag);
-      return elementTags.indexOf(tag) > -1;
-    });
-  });
+  const deprecatedElementsCount = Array.from(htmlBodyElements).reduce(
+    (acc_1, x) => {
+      const elementTags = Object.values(x.attributes).map(x => x.localName);
+      return (acc_1 += forbiddenTags.reduce(
+        (acc_2, tag) => (elementTags.indexOf(tag) > -1 ? ++acc_2 : acc_2),
+        0
+      ));
+    },
+    0
+  );
+  return deprecatedElementsCount;
+}
+
+function getDeprecatedHtmlAttributes() {}
+
+function hasDeprecatedHtmlAttributes() {
+  return !!countDeprecatedHtmlAttributes();
 }
 /* 
 link: https://www.tutorialspoint.com/html/html_deprecated_tags.htm
