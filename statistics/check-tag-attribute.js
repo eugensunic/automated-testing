@@ -2,8 +2,7 @@
 function countHtmlTagAttribute(attributeName) {
   const htmlBodyElements = document.body.getElementsByTagName("*");
 
-  return Array.from(htmlBodyElements).forea((acc_1, x) => {
-    console.log(Object.values(x.attributes).map(y => y.localName));
+  return Array.from(htmlBodyElements).reduce((acc_1, x) => {
     return (
       acc_1 +
       Object.values(x.attributes)

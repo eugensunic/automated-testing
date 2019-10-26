@@ -43,7 +43,7 @@ function countDeprecatedHtmlAttributes() {
   ];
   const deprecatedElementsCount = Array.from(htmlBodyElements).reduce(
     (acc_1, x) => {
-      const elementTags = Object.values(x.attributes).map(x => x.localName);
+      const elementTags = Object.values(x.attributes).map(y => y.localName);
       return (acc_1 += forbiddenTags.reduce(
         (acc_2, tag) => (elementTags.indexOf(tag) > -1 ? ++acc_2 : acc_2),
         0
@@ -54,7 +54,43 @@ function countDeprecatedHtmlAttributes() {
   return deprecatedElementsCount;
 }
 
-function getDeprecatedHtmlAttributes() {}
+function getDeprecatedHtmlAttributes() {
+  const htmlBodyElements = document.body.getElementsByTagName("*");
+  const forbiddenTags = [
+    "align",
+    "alink",
+    "background",
+    "bgcolor",
+    "border",
+    "clear",
+    "height",
+    "hspace",
+    "language",
+    "link",
+    "nowrap",
+    "start",
+    "text",
+    "type",
+    "vlink",
+    "vspace",
+    "width"
+  ];
+  const deprecatedElementsCount = Array.from(htmlBodyElements).reduce(
+    (acc_1, x) => {
+      const elementTags = Object.values(x.attributes).map(y => y.localName);
+      const element = forbiddenTags.reduce(
+        (acc_2, tag) => (elementTags.indexOf(tag) > -1 ? x : null),
+        null
+      );
+      if (!!element) {
+        acc_1.push(element);
+      }
+      return acc_1;
+    },
+    []
+  );
+  return deprecatedElementsCount;
+}
 
 function hasDeprecatedHtmlAttributes() {
   return !!countDeprecatedHtmlAttributes();
