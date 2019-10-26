@@ -4,6 +4,7 @@ function getImageStats(rejectCorsErr) {
 
   let obj = {
     htmlImage: null,
+    isAbsolutePath: null,
     hasId: null,
     imageExtension: null,
     hasAltProp: null,
@@ -23,6 +24,9 @@ function getImageStats(rejectCorsErr) {
     obj = {
       ...obj,
       src: imgArr[i].src,
+      isAbsolutePath: !!imgArr[i].src
+        ? /^https?:\/\//i.test(imgArr[i].getAttribute("src"))
+        : null,
       CORS: corsExtension
         ? corsExtension.indexOf(location.hostname) <= 0
         : null,
@@ -65,6 +69,9 @@ function getImageStats(rejectCorsErr) {
             ...acc,
             imageCount: ++acc["imageCount"],
             idCount: !!x.id ? ++acc["idCount"] : acc["idCount"],
+            absolutePathCount: !!x.isAbsolutePath
+              ? ++acc["absolutePathCount"]
+              : acc["absolutePathCount"],
             missingSrcPropCount: !x.src
               ? ++acc["missingSrcPropCount"]
               : acc["missingSrcPropCount"],
@@ -95,6 +102,7 @@ function getImageStats(rejectCorsErr) {
         },
         {
           imageCount: 0,
+          absolutePathCount: 0,
           missingSrcPropCount: 0,
           invalidUrlCount: 0,
           idCount: 0,
@@ -108,6 +116,11 @@ function getImageStats(rejectCorsErr) {
 
       console.log("Total images:", stats.imageCount);
       console.log("Total missing src props:", stats.missingSrcPropCount);
+      console.log(
+        "Total relative paths",
+        stats.length - stats.absolutePathCount
+      );
+      console.log("Total absolute paths", stats.absolutePathCount);
       console.log("Total missing alt props:", stats.missingAltProps);
       console.log("Total invalid URL's:", stats.invalidUrlCount);
       console.log("Total Id's:", stats.idCount);
@@ -118,3 +131,9 @@ function getImageStats(rejectCorsErr) {
       console.log("Images over x KB size:", null);
     });
 }
+
+// 2.) get number of images on web page, check if they contain alt attribute if path is valid DON
+/* 
+7.) check external links (absolute path)
+8.) check internal links (relative path)  
+*/
