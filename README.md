@@ -14,6 +14,7 @@ to store all these functions and extend with others related to testing.
 - [ ] check deprecated html tags, deprecated html tag attributes
 - [ ] check number of deprecated html tags, number of deprecated html attributes
 - [ ] find duplicated ID's inside the DOM, get all ID's and display them
+- [ ] find duplicated attributes for every HTML element separately inside the DOM
 - [ ] display all .js frameworks being used on a website (JQuery, Angular, Angular.js, React.JS, Vue.js Backbone, Meteor etc.)
 - [ ] get number of images on web page, check if they contain alt attribute if their src attribute path is valid, check external and internal src values (absolute, relative paths)
 - [ ] check if html link tags are valid/exist/are dead (`<a href></a>`), check non-existing href properties, check if target property exists (checking for `target="_blank"`). check wether href property value is an absolute or relative path
