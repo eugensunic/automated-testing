@@ -13,6 +13,8 @@ function containsDeprecatedHtmlTags() {
     s: document.getElementsByTagName("s"),
     strike: document.getElementsByTagName("strike"),
     u: document.getElementsByTagName("u"),
+    i: document.getElementsByTagName("i"),
+    b: document.getElementsByTagName("b"),
     xmp: document.getElementsByTagName("xmp")
   };
   return Object.values(obj).some(x => x.length);
@@ -138,4 +140,5 @@ width	Specifies width of body and other elements	width
 
 */
 
-// 12.) check deprecated html tags
+// check deprecated html tags DONE
+// check number of deprecated html tags DONE

@@ -11,4 +11,4 @@ console.log("Amount found: ", checkForHtmlString("undefined", 0, 0));
 console.log("Amount found: ", checkForHtmlString("null", 0, 0));
 
 
-// 1.) check if undefined/null/NaN is displayed in the browser
+// 1.) check if undefined/null/NaN is displayed in the browser DONE

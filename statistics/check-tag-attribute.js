@@ -26,3 +26,5 @@ function getHtmlTagAttribute(attributeName) {
     return acc;
   }, []);
 }
+
+// 10.) check styles tag in html DOM, get amount of styles props being used DONE
