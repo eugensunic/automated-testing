@@ -9,4 +9,4 @@
 the ones being used on the page
 21.) check number of allowed inputs in input fields and type of inputs, implement
 input fields exhaustion
-22.) get meta data, title, scripts loading
+
