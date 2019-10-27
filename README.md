@@ -3,7 +3,7 @@
 Repository contains various functions used for fetching DOM statistics along with ailments found inside of it.
 
 After completing a big frontend project. I stumbled on various problems where I was constantly
-re-implementing solutions since previous haven't been saved, hence I decided to create a repository
+re-implementing solutions since previous haven't been saved, hence decided to create a repository
 to store all these functions and extend with others related to testing.
 
 ## Target to reach
