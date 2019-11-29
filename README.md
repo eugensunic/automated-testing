@@ -1,4 +1,4 @@
-# Functions used for quicker website testing
+# Functions used for faster and efficient website testing
 
 Repository contains various functions used for fetching DOM statistics along with ailments found inside of it.
 
